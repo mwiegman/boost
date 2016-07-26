@@ -1,0 +1,20 @@
+footer {
+  background-color: #e7e7e7;
+  margin-top: 10px;
+} 
+
+.navbar {
+	border-right: 0px;
+	border-left: 0px;
+	margin-bottom: 5px;
+}
+
+.container-fluid {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.navbar-brand {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-right: 1px solid #e7e7e7;	
+}

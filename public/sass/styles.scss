@@ -1,0 +1,224 @@
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+//import google fonts
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600|Orbitron';
+
+//import icon fonts
+@import url(http://weloveiconfonts.com/api/?family=entypo|maki);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/* maki */
+[class*="maki-"]:before {
+  font-family: 'maki', sans-serif;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  width:100%;
+  padding-top: 70px;
+  /* Margin bottom by footer height */
+  margin-bottom: 400px;
+}
+
+.boost {
+  font-family: "Orbitron", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $brand-success;
+
+  :hover {
+    color: $brand-primary;
+  }
+}
+
+.navbar {  
+  text-transform: uppercase;
+  border: none;
+  margin-bottom: 0;  
+
+  li a {
+    padding-right: 30px;
+    padding-left: 30px;   
+  }
+}
+ 
+.nav-border {
+   border-right: 1px solid #e7e7e7;
+}
+
+.navbar-brand {
+  padding-top: 5px;
+  padding-bottom: 5px; 
+  text-transform: capitalize;  
+  @media screen and (min-width: 768px) {border-right: 1px solid #e7e7e7; }
+}
+
+.jumbotron {
+  background-image:  url('../images/boost.jpg');
+  background-size: cover;
+  text-shadow: 1px 1px 1px $gray-dark;
+  min-height: 30vh;
+
+  h1 {
+    margin-bottom: 0;
+    color: $brand-success;
+    font-weight: 600;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}
+
+footer  {
+  position: absolute;
+  bottom: 0;
+  width: 100%;  
+  height: 250px;
+  background-color: #0E1829;  
+  color: #fff;
+  padding-top: 20px ;
+  padding-bottom: 20px;
+  font-size: $font-size-small;
+
+ li:first-child {
+      padding: 10px 15px;
+      text-decoration: underline;
+    }
+
+  .nav li {
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover {
+      //color: $brand-success;
+      background-color: #0E1829;
+      text-decoration: underline;
+    }
+  }
+} 
+
+.thumbnail > .caption {
+  padding: 0 10px;
+}
+
+h2 {
+    //margin-bottom: 30px !important;
+  }
+
+//background for home page links
+.crayons {
+  background-image:  url('../images/crayons.jpg');
+  background-size: cover;
+  height: 250px;
+}
+.guitar {
+  background-image:  url('../images/guitar.jpg');
+  background-size: cover;
+  height: 250px;
+}
+
+.sports {
+  background-image:  url('../images/sports.jpg');
+  background-size: cover;
+  height: 250px;
+}
+
+.cse {
+  background-image:  url('../images/cse.jpg');
+  background-size: cover;
+  height: 250px;
+}
+
+.ae {
+  background-image:  url('../images/als.jpg');
+  background-size: cover;
+  height: 250px;
+}
+
+.ars {
+  background-image:  url('../images/ars.jpg');
+  background-size: cover;
+  height: 250px;
+}
+
+//class list styles
+.class-item {
+  background-color: white; 
+  padding: 10px 10px 0 20px;
+  margin: 20px;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+}
+
+.class-icon {
+  color: $brand-primary;
+  font-size: 5em;
+  text-align: center;  
+}
+
+.icon-link {
+  font-size: 1.5em;
+  padding-top: 8px;  
+}
+
+.heart {
+  color: #d9534f;
+  :hover {
+    color: darken(#d9534f, 20%);
+  }
+}
+
+.heart-disabled {
+  color: $gray;
+  :hover {
+    color: $gray-dark;
+  }
+}
+
+.plus {
+  color: $brand-success;
+  :hover {
+    color: $brand-primary;
+    } 
+}
+
+.class-info {
+  border-top: 1px solid #e7e7e7;
+}
+
+.class-details {  
+  border-right: 1px solid #e7e7e7;
+}
+
+//class list filter/sort styles
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+
+
+@media screen and (max-width: $screen-sm) {
+  //decrease font size on smaller screens
+  $font-size-base: 16px;
+  .class-icon {
+    font-size: 3em;
+  }
+
+.student-form {
+  padding-left: 0;
+  }
+}
+ 
+
+
