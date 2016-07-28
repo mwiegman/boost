@@ -1,4 +1,5 @@
-<?php 
+<?php //shows user's registered classes
+
 //redirect user if not logged in
 if (!isset($_SESSION['user_id'])) {
   header('location: index.php?pagelet=index');
@@ -10,8 +11,10 @@ if (!$_SESSION['prof_id'] && $_SESSION['admin'] == 0) {
 }
 ?>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <?php
@@ -26,14 +29,11 @@ if (isset($_GET['registered'])) {
     <h2 class='text-success'>The student is now registered.</h2>
   </noscript>";
 }
-
 ?>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1">
-      
-
 
 <?php
 $user_id=$_SESSION['user_id'];
@@ -118,23 +118,6 @@ echo
 </div>';
 }   
 
-// Display records.
-// while ($row = mysqli_fetch_assoc($r)) {
-// echo '<div class="col-sm-6">
-
-//           <dl class="dl-horizontal">
-
-//               <dt><h4 class="class-title"><strong>' . $row['class_name'] . '</strong></h4><dt>
-//               <dt class="text-uppercase">' . $row['start_date'] . ' - ' . $row['end_date'] .'<br />' . $row['loc_name'] . '</dt>                                        
-//               <dd> ' . $row['name'] . '<br />
-//                Age ' . $row['age'] . '<br />
-//                Grade ' . $row['grade'] . '</dd>
-//               <dd><strong>Amount Due: ' . $row['price'] . '</strong></dd>
-//           </dl>
-
-//       </div>';
-// }   
-// echo '</div>'; //end of row
 // Make the links to other pages, if necessary.
 if ($num_pages > 1) {
     
@@ -146,7 +129,7 @@ if ($num_pages > 1) {
     
     // If it's not the first page, make a Previous button.
     if ($current_page != 1) {                    
-      //previous link for default view
+      //previous link 
         echo '<li>
                   <a href="index.php?pagelet=myclasses&s=' . ($start - $display) . '&np=' . $num_pages . '" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>

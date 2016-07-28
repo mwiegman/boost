@@ -1,5 +1,5 @@
-<?php 
-// login page
+<?php // login page
+
 //redirect user if logged in
 if (isset($_SESSION['user_id'])) {
   header('location: index.php?pagelet=index');
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Trim all the incoming data:
   $trimmed = array_map('trim', $_POST);
 
-	// Validate the email address:
+	// Validate email address:
 	if (!empty($_POST['username'])) {
 		$u = mysqli_real_escape_string ($dbc, $trimmed['username']);
 	} else {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$message .= '<p>Please enter your username.</p>';
 	}
 	
-	// Validate the password:
+	// Validate password:
 	if (!empty($_POST['password'])) {
 		$p = mysqli_real_escape_string ($dbc, $trimmed['password']);
 	} else {
@@ -29,13 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$message .= '<p>Please enter your password.</p>';
 	}
 	
-	if ($u && $p) { // If everything's OK.
+	if ($u && $p) { // validation passes
 
 		// Query the database:
 		$q = "SELECT user_id, prof_id, username, email, admin FROM users WHERE (username='$u' AND password=SHA1('$p')) AND active IS NULL";		
 		$r = mysqli_query ($dbc, $q);
 		
-		if (@mysqli_num_rows($r) == 1) { // A match was made.
+		if (@mysqli_num_rows($r) == 1) { // user found
 
 			// Register the values:
 			$_SESSION = mysqli_fetch_array ($r, MYSQLI_ASSOC); 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			
       if (!isset($_SESSION['prof_id']) && $_SESSION['admin'] == 0) {//if profile is not complete, redirect to profile page	
 			header('location: index.php?pagelet=profile');						
-			} else {//redirect to index page
+			} else {//otherwise redirect to index page
         header('location: index.php?pagelet=index');            
       }
 				
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h2 class='text-danger'>$message</h2></noscript>";
 		}
 		
-	} else { // If everything wasn't OK.
+	} else { // validation fails
 		//show error modal           
     echo "<script type='text/javascript'>
       $(document).ready(function(){
@@ -76,6 +76,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } // End of SUBMIT conditional.
  
 ?>
+<div class="jumbotron">
+  <div class="container text-center">
+    <div class="row">
+      <h1>Boost</h1>
+      <h2>After School Enrichment</h2>
+    </div>  
+  </div>
+</div>
+
 <div class="container">
 
   <div class="row">

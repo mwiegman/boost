@@ -4,6 +4,10 @@
 // Import Bootstrap for Sass
 @import "bootstrap";
 
+
+//font styles
+//--------------------------------------
+
 //import google fonts
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600|Orbitron';
 
@@ -20,6 +24,19 @@
   font-family: 'maki', sans-serif;
 }
 
+//decrease font size on smaller screens
+@media screen and (max-width: $screen-sm) {
+  
+  $font-size-base: 16px;
+  .class-icon {
+    font-size: 3em;
+  }
+
+}
+
+
+//body styles
+//--------------------------------------
 html {
   position: relative;
   min-height: 100%;
@@ -27,20 +44,13 @@ html {
 
 body {
   width:100%;
-  padding-top: 70px;
-  /* Margin bottom by footer height */
+  padding-top: 70px;  
   margin-bottom: 400px;
 }
 
-.boost {
-  font-family: "Orbitron", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: $brand-success;
 
-  :hover {
-    color: $brand-primary;
-  }
-}
-
+//nav styles
+//--------------------------------------
 .navbar {  
   text-transform: uppercase;
   border: none;
@@ -56,13 +66,26 @@ body {
    border-right: 1px solid #e7e7e7;
 }
 
-.navbar-brand {
+.navbar-brand {  
   padding-top: 5px;
   padding-bottom: 5px; 
   text-transform: capitalize;  
-  @media screen and (min-width: 768px) {border-right: 1px solid #e7e7e7; }
+  @media screen and (min-width: 768px) {
+    border-right: 1px solid #e7e7e7; 
+  }
+  > small {
+    color: $brand-success;
+  }
 }
 
+.boost {
+  font-family: "Orbitron", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $brand-success;   
+}
+
+
+//header/jumbotron styles
+//--------------------------------------
 .jumbotron {
   background-image:  url('../images/boost.jpg');
   background-size: cover;
@@ -73,14 +96,23 @@ body {
     margin-bottom: 0;
     color: $brand-success;
     font-weight: 600;
+    font-family: "Orbitron", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $brand-success;
   }
 
   h2 {
     margin-top: 0;
     margin-bottom: 30px;
-  }
+  }  
 }
 
+.title {
+  margin-left: 20px;
+}
+
+
+//footer styles
+//--------------------------------------
 footer  {
   position: absolute;
   bottom: 0;
@@ -110,15 +142,9 @@ footer  {
   }
 } 
 
-.thumbnail > .caption {
-  padding: 0 10px;
-}
 
-h2 {
-    //margin-bottom: 30px !important;
-  }
-
-//background for home page links
+//home page styles
+//--------------------------------------
 .crayons {
   background-image:  url('../images/crayons.jpg');
   background-size: cover;
@@ -154,10 +180,17 @@ h2 {
   height: 250px;
 }
 
+.thumbnail > .caption {
+  padding: 0 10px;
+}
+
+
 //class list styles
+//--------------------------------------
 .class-item {
-  background-color: white; 
-  padding: 10px 10px 0 20px;
+  background-color: white;  
+  padding: 10px; 
+  padding-bottom: 0;
   margin: 20px;
   box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
 }
@@ -180,13 +213,6 @@ h2 {
   }
 }
 
-.heart-disabled {
-  color: $gray;
-  :hover {
-    color: $gray-dark;
-  }
-}
-
 .plus {
   color: $brand-success;
   :hover {
@@ -198,27 +224,58 @@ h2 {
   border-top: 1px solid #e7e7e7;
 }
 
-.class-details {  
-  border-right: 1px solid #e7e7e7;
+.border-left {  
+  border-left: 1px solid #e7e7e7;
 }
 
-//class list filter/sort styles
 .panel-body { padding:0px; }
 .panel-body table tr td { padding-left: 15px }
 .panel-body .table {margin-bottom: 0px; }
 
-
 @media screen and (max-width: $screen-sm) {
-  //decrease font size on smaller screens
-  $font-size-base: 16px;
-  .class-icon {
-    font-size: 3em;
-  }
+   .class-item {
+    margin-left: 0;
+   }
 
-.student-form {
-  padding-left: 0;
-  }
+   .class-info {
+    border-top: none;
+   }
+
+   .border-left {
+    border-left: none;
+   }
+
+   .icon-link {
+    border-top: 1px solid #e7e7e7;
+   }
+
+   .class-info > .icon-link {
+    border-right: 1px solid #e7e7e7;
+   }
+
+   .class-info >.icon-link ~ .icon-link {
+    border-right: none;
+   }
 }
- 
 
 
+//form styles
+//--------------------------------------
+form {  
+    background: #fff;
+    border: 1px solid #D2D6DF;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 1px #fff;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;   
+}
+
+.mce-content-body {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.mce-btn-group .mce-btn {
+  float: left;
+}

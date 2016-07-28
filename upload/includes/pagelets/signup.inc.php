@@ -1,4 +1,4 @@
-<?php // registration page
+<?php // sign up page
 
 //redirect user if logged in
 if (isset($_SESSION['user_id'])) {
@@ -24,14 +24,15 @@ if (isset($_SESSION['user_id'])) {
   </div>
 </div>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 
-	// Need the database connection:
 	require_once ('../upload/mysqli_connect.php'); // Connect to the db.
 
 	// message variable. 
@@ -68,9 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 		$message .= '<p>Please enter a password.</p>';
 	}
 	
-	if ($u && $e && $p) { // If everything's OK...
+	if ($u && $e && $p) { // validation passes
 
-		// Make sure the email address is available:
+		// Make sure the email address and username is not in use
 		$q = "SELECT user_id FROM users WHERE email='$e' || username='$u'";
 		$r = mysqli_query ($dbc, $q);
 		
@@ -86,9 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 			if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
 
 				//Send the email:
-				// $body = "Thank you for registering at Boost. To activate your account, please click on this link:\n\n";
-				// $body .= 'http://student065.webdev.seminolestate.edu/index.php?pagelet=activate&x=' . urlencode($e) . "&y=$a";
-				// mail($trimmed['email'], 'Registration Confirmation', $body, 'From: admin@sitename.com');
+				$body = "Thank you for registering at Boost. To activate your account, please click on this link:\n\n";
+				$body .= 'http://student065.webdev.seminolestate.edu/index.php?pagelet=activate&x=' . urlencode($e) . "&y=$a";
+				mail($trimmed['email'], 'Registration Confirmation', $body, 'From: admin@sitename.com');
 				
 				// Show confirmation:				
 				echo "<script type='text/javascript'>
@@ -100,7 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
           <div class='text-success'>Thank you for registering! A confirmation email has been sent to your address. Please click on the link in that email to activate your account.</div>";          				
 				exit(); // Stop the page.
 				
-			} else { // If it did not run OK.
+			} else { // Insert failed
+        //show error message
 				$message = '<p>You could not be registered due to a system error. We apologize for any inconvenience.</p><p>' . mysqli_error($dbc) . '</p>';
 				echo "<script type='text/javascript'>
             $(document).ready(function(){
@@ -126,6 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
         $message .= 'That username has already been registered. ';
       }
 
+      //direct user to log in
 			$message .= '<p>If you have an account, <a href="index.php?pagelet=login"><u>log in</u></a>.</p>';
 			echo "<script type='text/javascript'>
             $(document).ready(function(){
@@ -136,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
             <div class='text-danger'>$message</div></noscript>";
 		}
 		
-	} else { // If one of the validation tests failed.			
+	} else { // validation fails			
 		echo "<script type='text/javascript'>
           $(document).ready(function(){
           $('#goback').modal('show');

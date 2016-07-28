@@ -1,4 +1,5 @@
-<?php
+<?php//Password reset page
+
 // If $x and $y don't exist or aren't of the proper format, redirect the user:
 if (isset($_GET['x'], $_GET['y']) && filter_var($_GET['x'], FILTER_VALIDATE_EMAIL) && (strlen($_GET['y']) == 32 )) { //check if reset expiration time is valid
 
@@ -30,7 +31,7 @@ if (isset($_GET['x'], $_GET['y']) && filter_var($_GET['x'], FILTER_VALIDATE_EMAI
 <div class="jumbotron">
   <div class="container text-center">
     <div class="row">
-      <h1 class="boost">Boost</h1>
+      <h1>Boost</h1>
       <h2>After School Enrichment</h2>
     </div>  
   </div>

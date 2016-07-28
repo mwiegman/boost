@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="<?php echo constant(strtoupper($pagelet) . '_DESC'); ?>">    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-signin-client_id" content="940422086882-8j7m0of2leidh11qho5eq5a9sn4ls5kg.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>
     	<?php echo "Boost | " . constant(strtoupper($pagelet) . '_TITLE'); ?> 
   	</title>    
-    <link rel="icon" href="http://student065.webdev.seminolestate.edu/favicon.ico?v=2" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="icon" href="http://student065.webdev.seminolestate.edu/favicon.ico?v=2" type="image/x-icon" />    
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>			
 <?php 
-if ($pagelet == 'addclass' || 'modifyclass') {
+if ($pagelet == 'addclass' || 'modifyclass') {//add tinymce script to pages with text areas
   echo "<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
   <script>tinymce.init({ selector:'textarea', menubar: false, toolbar: 'undo redo bold italic alignleft aligncenter alignright bullist numlist outdent indent', content_css: 'css/styles.css' });</script>";
 }

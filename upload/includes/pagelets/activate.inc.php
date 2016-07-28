@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="container text-center">
     <div class="row">
-      <h1 class="boost">Boost</h1>
+      <h1>Boost</h1>
       <h2>After School Enrichment</h2>
     </div>  
   </div>

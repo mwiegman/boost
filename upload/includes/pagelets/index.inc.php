@@ -1,15 +1,15 @@
 <div class="jumbotron">
-  <div class="container text-center">
-    <div class="row">
-      <h1 class="boost">Boost</h1>
+  <div class="container text-center animated fadeInUpBig">
+    <div class="row ">
+      <h1>Boost</h1>
       <h2>After School Enrichment</h2>
-     </div>
-  <div class="row">
-    <p>Help your child soar to new heights with Boost's afterschool enrichment classes. <br>Sign up today!</p>
-  </div>
-  <div class="row">
-    <a class="btn btn-success btn-lg" href="index.php?pagelet=classes" role="button">VIEW CLASSES</a>
-  </div>
+    </div>
+    <div class="row">
+      <p>Help your child soar to new heights with Boost's after school enrichment classes. <br>Sign up today!</p>
+    </div>
+    <div class="row">
+      <a class="btn btn-success btn-lg call-to-action" href="index.php?pagelet=classes" role="button">VIEW CLASSES</a>
+    </div>
   </div>
 </div>
 <div class="container">

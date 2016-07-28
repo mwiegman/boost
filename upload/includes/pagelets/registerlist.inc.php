@@ -1,20 +1,20 @@
-<?php 
-//redirect user if not logged in
+<?php //admin class roster page
+
+//redirect user if not logged in as admin
 if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
   header('location: index.php?pagelet=index');
 }
 ?>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-10 col-md-offset-1">
-      
-      
-
+    <div class="col-sm-12 col-md-10 col-md-offset-1">   
 
 <?php
 $user_id=$_SESSION['user_id'];
@@ -51,7 +51,7 @@ if (isset($_GET['np'])) { // Already been determined.
     }    
    
 } // End of np IF.
-
+//make query
 $q = "SELECT c.class_id, c.class_name, DATE_FORMAT(c.start_date, '%b %d, %Y') AS start_date, DATE_FORMAT(c.end_date, '%b %d, %Y') AS end_date, l.loc_name 
         FROM classes AS c         
         INNER JOIN location as l  
@@ -71,7 +71,7 @@ echo '<div class="row">
               <p class="list-group-item-heading text-uppercase">' . $row['start_date'] . ' - ' . $row['end_date'] .'<br />' . $row['loc_name'] . '</p>
             </li>';
 
-      //echo participant names for each class
+      //echo student names for each class
       $query = "SELECT CONCAT(first_name, ' ', last_name) AS name, age, grade FROM participants WHERE       class_id='" . $row['class_id'] ."'";
       $result = mysqli_query ($dbc, $query);
       if (mysqli_num_rows($result) > 0) {
@@ -93,8 +93,6 @@ echo '<div class="row">
 
 mysqli_free_result($r);
 mysqli_close($dbc); //close the database connection
-
-
 
 // Make the links to other pages, if necessary.
 if ($num_pages > 1) {
@@ -143,8 +141,6 @@ if ($num_pages > 1) {
     </nav>
   </div>';    
 } // End of links section.
-
-//mysqli_close($dbc); //close the database connection
 ?>
       
     </div><!-- col-sm-12 -->

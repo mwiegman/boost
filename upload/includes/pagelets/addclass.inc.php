@@ -1,4 +1,6 @@
-<?php //redirect user if not logged in or not admin
+<?php//This page allows the admin to add classes 
+
+//redirect user if not logged in or not admin
 if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
   header('location: index.php?pagelet=index');
 }
@@ -22,8 +24,10 @@ if (isset($_SESSION['add_class'])) {//confirmation when returning to page after 
 }
 ?>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <div class="container">
@@ -190,10 +194,10 @@ if (isset($_SESSION['add_class'])) {//confirmation when returning to page after 
      </div>   
      <div class="form-group">
         <label for="desc">Class Description</label>
-        <textarea rows="10" cols="50" class="form-control" name="desc"><?php if (isset ($_POST['desc'])) echo stripslashes($_POST['desc']); ?></textarea>
+        <textarea rows="10" cols="50" class="form-control" name="desc"><?php if (isset ($_POST['desc'])) echo $_POST['desc']; ?></textarea>
       </div>
-     <div class="form-group pull-right">
-      <button type="submit" class="btn btn-success">Save</button>
+     <div class="form-group text-right">
+      <button type="submit" class="btn btn-success btn-lg">Save</button>
      </div> 
     </form>
 <?php 

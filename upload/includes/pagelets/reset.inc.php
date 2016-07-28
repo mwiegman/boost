@@ -29,7 +29,6 @@ if (isset($_SESSION['user_id'])) {
 //handle form 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //check user input
-// Need the database connection
   require_once ('../upload/mysqli_connect.php'); // Connect to the db.
 
   // message variable. 
@@ -55,9 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $message .= '<p>Please enter your email address.</p>';
   }
 
-//if form validates
-  if ($u && $e) {
-    //confirm username and email
+  if ($u && $e) {//validation passes
+    //confirm username and email is for a registered user
     $q = "SELECT user_id FROM users WHERE email='$e' || username='$u'";
     $r = mysqli_query ($dbc, $q);
 
@@ -71,20 +69,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       if (mysqli_affected_rows($dbc) == 1) {//insert worked
       //send email
-      // $body = "Did you forget your Boost password? It happens. To reset your password, please click on this link:\n\n";
-      // $body .= 'http://student065.webdev.seminolestate.edu/index.php?pagelet=chgpswd&x=' . urlencode($e) . "&y=$reset";
-      // mail($trimmed['email'], 'Forget your password?', $body, 'From: admin@boost.com');
-        
-        echo '<a href="index.php?pagelet=chgpswd&x=' . urlencode($e) . '&y=' . $reset . '">Click Here</a>';
-
+      $body = "Did you forget your Boost password? It happens. To reset your password, please click on this link:\n\n";
+      $body .= 'http://student065.webdev.seminolestate.edu/index.php?pagelet=chgpswd&x=' . urlencode($e) . "&y=$reset";
+      mail($trimmed['email'], 'Forget your password?', $body, 'From: admin@boost.com');
+       
       //show confirmation message
-      // echo "<script type='text/javascript'>
-      //     $(document).ready(function(){
-      //     $('#confirm-modal').modal({show: true, keyboard:false, backdrop: 'static'});
-      //     });
-      //     </script>
-      //     <noscript class='text-center'>
-      //     <div class='text-success'>Your request has been processed. A password reset email has been sent to your address. Please click on the link in that email to reset your password.</div>";                 
+      echo "<script type='text/javascript'>
+          $(document).ready(function(){
+          $('#confirm-modal').modal({show: true, keyboard:false, backdrop: 'static'});
+          });
+          </script>
+          <noscript class='text-center'>
+          <div class='text-success'>Your request has been processed. A password reset email has been sent to your address. Please click on the link in that email to reset your password.</div>";  
+                      
         exit(); // Stop the page.
 
       } else {//insert failed
@@ -108,7 +105,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <noscript class='text-center'>
         <div class='text-danger'>$message</div></noscript>";
     }
-  } else {//show validation error
+  } else {//validation fails
+    //show error message
     echo "<script type='text/javascript'>
           $(document).ready(function(){
           $('#goback').modal('show');
@@ -118,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class='text-danger'>$message</div></noscript>";
   }
  mysqli_close($dbc);
-} //show form
+} //always show form
 ?>
   
 <div class="container">
@@ -126,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <div class="row">
       <div class="col-md-4 col-md-offset-4 text-center">
         <h4>Reset Your Password</h4>
-        <p>Enter your username and email address and we'll send you a link to reset your password
+        <p>Enter your username and email address and we'll send you a link to reset your password.
         </p>
       </div>
   </div>

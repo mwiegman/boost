@@ -7,8 +7,10 @@
   </div>
 </div>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <div class="container">

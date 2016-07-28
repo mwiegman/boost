@@ -1738,7 +1738,7 @@ textarea {
 
 /* line 48, ../sass/bootstrap/_scaffolding.scss */
 a {
-  color: #284575;
+  color: #355b9b;
   text-decoration: none;
 }
 /* line 52, ../sass/bootstrap/_scaffolding.scss */
@@ -2007,13 +2007,13 @@ mark,
 
 /* line 5, ../sass/bootstrap/mixins/_text-emphasis.scss */
 .text-primary {
-  color: #284575;
+  color: #355b9b;
 }
 
 /* line 8, ../sass/bootstrap/mixins/_text-emphasis.scss */
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #1b2e4f;
+  color: #284575;
 }
 
 /* line 5, ../sass/bootstrap/mixins/_text-emphasis.scss */
@@ -2067,13 +2067,13 @@ a.text-danger:focus {
 
 /* line 5, ../sass/bootstrap/mixins/_background-variant.scss */
 .bg-primary {
-  background-color: #284575;
+  background-color: #355b9b;
 }
 
 /* line 8, ../sass/bootstrap/mixins/_background-variant.scss */
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #1b2e4f;
+  background-color: #284575;
 }
 
 /* line 5, ../sass/bootstrap/mixins/_background-variant.scss */
@@ -4518,32 +4518,32 @@ a.btn.disabled, fieldset[disabled] a.btn {
 /* line 71, ../sass/bootstrap/_buttons.scss */
 .btn-primary {
   color: #fff;
-  background-color: #284575;
-  border-color: #213962;
+  background-color: #355b9b;
+  border-color: #2e5088;
 }
 /* line 11, ../sass/bootstrap/mixins/_buttons.scss */
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #1b2e4f;
-  border-color: #010203;
+  background-color: #284575;
+  border-color: #0e1829;
 }
 /* line 17, ../sass/bootstrap/mixins/_buttons.scss */
 .btn-primary:hover {
   color: #fff;
-  background-color: #1b2e4f;
-  border-color: #121f34;
+  background-color: #284575;
+  border-color: #1f355a;
 }
 /* line 22, ../sass/bootstrap/mixins/_buttons.scss */
 .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #1b2e4f;
-  border-color: #121f34;
+  background-color: #284575;
+  border-color: #1f355a;
 }
 /* line 29, ../sass/bootstrap/mixins/_buttons.scss */
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
   color: #fff;
-  background-color: #121f34;
-  border-color: #010203;
+  background-color: #1f355a;
+  border-color: #0e1829;
 }
 /* line 37, ../sass/bootstrap/mixins/_buttons.scss */
 .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
@@ -4551,12 +4551,12 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 /* line 45, ../sass/bootstrap/mixins/_buttons.scss */
 .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus {
-  background-color: #284575;
-  border-color: #213962;
+  background-color: #355b9b;
+  border-color: #2e5088;
 }
 /* line 53, ../sass/bootstrap/mixins/_buttons.scss */
 .btn-primary .badge {
-  color: #284575;
+  color: #355b9b;
   background-color: #fff;
 }
 
@@ -4742,7 +4742,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 /* line 96, ../sass/bootstrap/_buttons.scss */
 .btn-link {
-  color: #284575;
+  color: #355b9b;
   font-weight: normal;
   border-radius: 0;
 }
@@ -4919,7 +4919,7 @@ tbody.collapse.in {
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
-  color: #284575;
+  color: #355b9b;
   white-space: nowrap;
 }
 
@@ -4935,7 +4935,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #284575;
+  background-color: #355b9b;
 }
 
 /* line 103, ../sass/bootstrap/_dropdowns.scss */
@@ -5462,7 +5462,7 @@ tbody.collapse.in {
 /* line 46, ../sass/bootstrap/_navs.scss */
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #284575;
+  border-color: #355b9b;
 }
 /* line 59, ../sass/bootstrap/_navs.scss */
 .nav .nav-divider {
@@ -5520,7 +5520,7 @@ tbody.collapse.in {
 /* line 131, ../sass/bootstrap/_navs.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #284575;
+  background-color: #355b9b;
 }
 
 /* line 144, ../sass/bootstrap/_navs.scss */
@@ -6047,7 +6047,7 @@ tbody.collapse.in {
 }
 /* line 401, ../sass/bootstrap/_navbar.scss */
 .navbar-default .navbar-brand {
-  color: #284575;
+  color: #355b9b;
 }
 /* line 403, ../sass/bootstrap/_navbar.scss */
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -6060,7 +6060,7 @@ tbody.collapse.in {
 }
 /* line 415, ../sass/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > li > a {
-  color: #284575;
+  color: #355b9b;
 }
 /* line 418, ../sass/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -6087,7 +6087,7 @@ tbody.collapse.in {
 }
 /* line 448, ../sass/bootstrap/_navbar.scss */
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #284575;
+  background-color: #355b9b;
 }
 /* line 453, ../sass/bootstrap/_navbar.scss */
 .navbar-default .navbar-collapse,
@@ -6102,7 +6102,7 @@ tbody.collapse.in {
 @media (max-width: 767px) {
   /* line 473, ../sass/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #284575;
+    color: #355b9b;
   }
   /* line 475, ../sass/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -6122,7 +6122,7 @@ tbody.collapse.in {
 }
 /* line 506, ../sass/bootstrap/_navbar.scss */
 .navbar-default .navbar-link {
-  color: #284575;
+  color: #355b9b;
 }
 /* line 508, ../sass/bootstrap/_navbar.scss */
 .navbar-default .navbar-link:hover {
@@ -6130,7 +6130,7 @@ tbody.collapse.in {
 }
 /* line 513, ../sass/bootstrap/_navbar.scss */
 .navbar-default .btn-link {
-  color: #284575;
+  color: #355b9b;
 }
 /* line 515, ../sass/bootstrap/_navbar.scss */
 .navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
@@ -6292,7 +6292,7 @@ tbody.collapse.in {
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #284575;
+  color: #355b9b;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -6326,8 +6326,8 @@ tbody.collapse.in {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: #284575;
-  border-color: #284575;
+  background-color: #355b9b;
+  border-color: #355b9b;
   cursor: default;
 }
 /* line 64, ../sass/bootstrap/_pagination.scss */
@@ -6479,11 +6479,11 @@ a.label:hover, a.label:focus {
 
 /* line 48, ../sass/bootstrap/_labels.scss */
 .label-primary {
-  background-color: #284575;
+  background-color: #355b9b;
 }
 /* line 7, ../sass/bootstrap/mixins/_labels.scss */
 .label-primary[href]:hover, .label-primary[href]:focus {
-  background-color: #1b2e4f;
+  background-color: #284575;
 }
 
 /* line 52, ../sass/bootstrap/_labels.scss */
@@ -6553,7 +6553,7 @@ a.label:hover, a.label:focus {
 }
 /* line 41, ../sass/bootstrap/_badges.scss */
 .list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-  color: #284575;
+  color: #355b9b;
   background-color: #fff;
 }
 /* line 47, ../sass/bootstrap/_badges.scss */
@@ -6659,7 +6659,7 @@ a.badge:hover, a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #284575;
+  border-color: #355b9b;
 }
 
 /* line 9, ../sass/bootstrap/_alerts.scss */
@@ -6798,7 +6798,7 @@ a.thumbnail.active {
   line-height: 28px;
   color: #fff;
   text-align: center;
-  background-color: #284575;
+  background-color: #355b9b;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -7009,8 +7009,8 @@ button.list-group-item {
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #284575;
-  border-color: #284575;
+  background-color: #355b9b;
+  border-color: #355b9b;
 }
 /* line 96, ../sass/bootstrap/_list-group.scss */
 .list-group-item.active .list-group-item-heading,
@@ -7024,7 +7024,7 @@ button.list-group-item {
 }
 /* line 101, ../sass/bootstrap/_list-group.scss */
 .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
-  color: #90abd9;
+  color: #b6c8e6;
 }
 
 /* line 4, ../sass/bootstrap/mixins/_list-group.scss */
@@ -7490,26 +7490,26 @@ button.list-group-item-danger.active:focus {
 
 /* line 257, ../sass/bootstrap/_panels.scss */
 .panel-primary {
-  border-color: #284575;
+  border-color: #355b9b;
 }
 /* line 6, ../sass/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #284575;
-  border-color: #284575;
+  background-color: #355b9b;
+  border-color: #355b9b;
 }
 /* line 11, ../sass/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #284575;
+  border-top-color: #355b9b;
 }
 /* line 14, ../sass/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading .badge {
-  color: #284575;
+  color: #355b9b;
   background-color: #fff;
 }
 /* line 20, ../sass/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #284575;
+  border-bottom-color: #355b9b;
 }
 
 /* line 260, ../sass/bootstrap/_panels.scss */
@@ -8794,91 +8794,103 @@ button.close {
   }
 }
 /* entypo */
-/* line 14, ../sass/styles.scss */
+/* line 18, ../sass/styles.scss */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
 
 /* maki */
-/* line 19, ../sass/styles.scss */
+/* line 23, ../sass/styles.scss */
 [class*="maki-"]:before {
   font-family: 'maki', sans-serif;
 }
 
-/* line 23, ../sass/styles.scss */
+@media screen and (max-width: 768px) {
+  /* line 31, ../sass/styles.scss */
+  .class-icon {
+    font-size: 3em;
+  }
+}
+/* line 40, ../sass/styles.scss */
 html {
   position: relative;
   min-height: 100%;
 }
 
-/* line 28, ../sass/styles.scss */
+/* line 45, ../sass/styles.scss */
 body {
   width: 100%;
   padding-top: 70px;
-  /* Margin bottom by footer height */
   margin-bottom: 400px;
 }
 
-/* line 35, ../sass/styles.scss */
-.boost {
-  font-family: "Orbitron", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #F89406;
-}
-/* line 39, ../sass/styles.scss */
-.boost :hover {
-  color: #284575;
-}
-
-/* line 44, ../sass/styles.scss */
+/* line 54, ../sass/styles.scss */
 .navbar {
   text-transform: uppercase;
   border: none;
   margin-bottom: 0;
 }
-/* line 49, ../sass/styles.scss */
+/* line 59, ../sass/styles.scss */
 .navbar li a {
   padding-right: 30px;
   padding-left: 30px;
 }
 
-/* line 55, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
 .nav-border {
   border-right: 1px solid #e7e7e7;
 }
 
-/* line 59, ../sass/styles.scss */
+/* line 69, ../sass/styles.scss */
 .navbar-brand {
   padding-top: 5px;
   padding-bottom: 5px;
   text-transform: capitalize;
 }
 @media screen and (min-width: 768px) {
-  /* line 59, ../sass/styles.scss */
+  /* line 69, ../sass/styles.scss */
   .navbar-brand {
     border-right: 1px solid #e7e7e7;
   }
 }
+/* line 76, ../sass/styles.scss */
+.navbar-brand > small {
+  color: #F89406;
+}
 
-/* line 66, ../sass/styles.scss */
+/* line 81, ../sass/styles.scss */
+.boost {
+  font-family: "Orbitron", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #F89406;
+}
+
+/* line 89, ../sass/styles.scss */
 .jumbotron {
   background-image: url("../images/boost.jpg");
   background-size: cover;
   text-shadow: 1px 1px 1px #333333;
   min-height: 30vh;
 }
-/* line 72, ../sass/styles.scss */
+/* line 95, ../sass/styles.scss */
 .jumbotron h1 {
   margin-bottom: 0;
   color: #F89406;
   font-weight: 600;
+  font-family: "Orbitron", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #F89406;
 }
-/* line 78, ../sass/styles.scss */
+/* line 103, ../sass/styles.scss */
 .jumbotron h2 {
   margin-top: 0;
   margin-bottom: 30px;
 }
 
-/* line 84, ../sass/styles.scss */
+/* line 109, ../sass/styles.scss */
+.title {
+  margin-left: 20px;
+}
+
+/* line 116, ../sass/styles.scss */
 footer {
   position: absolute;
   bottom: 0;
@@ -8890,150 +8902,183 @@ footer {
   padding-bottom: 20px;
   font-size: 17px;
 }
-/* line 95, ../sass/styles.scss */
+/* line 127, ../sass/styles.scss */
 footer li:first-child {
   padding: 10px 15px;
   text-decoration: underline;
 }
-/* line 101, ../sass/styles.scss */
+/* line 133, ../sass/styles.scss */
 footer .nav li a {
   color: #fff;
   text-decoration: none;
 }
-/* line 105, ../sass/styles.scss */
+/* line 137, ../sass/styles.scss */
 footer .nav li a:hover {
   background-color: #0E1829;
   text-decoration: underline;
 }
 
-/* line 113, ../sass/styles.scss */
-.thumbnail > .caption {
-  padding: 0 10px;
-}
-
-/* line 122, ../sass/styles.scss */
+/* line 148, ../sass/styles.scss */
 .crayons {
   background-image: url("../images/crayons.jpg");
   background-size: cover;
   height: 250px;
 }
 
-/* line 127, ../sass/styles.scss */
+/* line 153, ../sass/styles.scss */
 .guitar {
   background-image: url("../images/guitar.jpg");
   background-size: cover;
   height: 250px;
 }
 
-/* line 133, ../sass/styles.scss */
+/* line 159, ../sass/styles.scss */
 .sports {
   background-image: url("../images/sports.jpg");
   background-size: cover;
   height: 250px;
 }
 
-/* line 139, ../sass/styles.scss */
+/* line 165, ../sass/styles.scss */
 .cse {
   background-image: url("../images/cse.jpg");
   background-size: cover;
   height: 250px;
 }
 
-/* line 145, ../sass/styles.scss */
+/* line 171, ../sass/styles.scss */
 .ae {
   background-image: url("../images/als.jpg");
   background-size: cover;
   height: 250px;
 }
 
-/* line 151, ../sass/styles.scss */
+/* line 177, ../sass/styles.scss */
 .ars {
   background-image: url("../images/ars.jpg");
   background-size: cover;
   height: 250px;
 }
 
-/* line 158, ../sass/styles.scss */
+/* line 183, ../sass/styles.scss */
+.thumbnail > .caption {
+  padding: 0 10px;
+}
+
+/* line 190, ../sass/styles.scss */
 .class-item {
   background-color: white;
-  padding: 10px 10px 0 20px;
+  padding: 10px;
+  padding-bottom: 0;
   margin: 20px;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
-/* line 165, ../sass/styles.scss */
+/* line 198, ../sass/styles.scss */
 .class-icon {
-  color: #284575;
+  color: #355b9b;
   font-size: 5em;
   text-align: center;
 }
 
-/* line 171, ../sass/styles.scss */
+/* line 204, ../sass/styles.scss */
 .icon-link {
   font-size: 1.5em;
   padding-top: 8px;
 }
 
-/* line 176, ../sass/styles.scss */
+/* line 209, ../sass/styles.scss */
 .heart {
   color: #d9534f;
 }
-/* line 178, ../sass/styles.scss */
+/* line 211, ../sass/styles.scss */
 .heart :hover {
   color: #a02622;
 }
 
-/* line 183, ../sass/styles.scss */
-.heart-disabled {
-  color: #555555;
-}
-/* line 185, ../sass/styles.scss */
-.heart-disabled :hover {
-  color: #333333;
-}
-
-/* line 190, ../sass/styles.scss */
+/* line 216, ../sass/styles.scss */
 .plus {
   color: #F89406;
 }
-/* line 192, ../sass/styles.scss */
+/* line 218, ../sass/styles.scss */
 .plus :hover {
-  color: #284575;
+  color: #355b9b;
 }
 
-/* line 197, ../sass/styles.scss */
+/* line 223, ../sass/styles.scss */
 .class-info {
   border-top: 1px solid #e7e7e7;
 }
 
-/* line 201, ../sass/styles.scss */
-.class-details {
-  border-right: 1px solid #e7e7e7;
+/* line 227, ../sass/styles.scss */
+.border-left {
+  border-left: 1px solid #e7e7e7;
 }
 
-/* line 206, ../sass/styles.scss */
+/* line 231, ../sass/styles.scss */
 .panel-body {
   padding: 0px;
 }
 
-/* line 207, ../sass/styles.scss */
+/* line 232, ../sass/styles.scss */
 .panel-body table tr td {
   padding-left: 15px;
 }
 
-/* line 208, ../sass/styles.scss */
+/* line 233, ../sass/styles.scss */
 .panel-body .table {
   margin-bottom: 0px;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 214, ../sass/styles.scss */
-  .class-icon {
-    font-size: 3em;
+  /* line 236, ../sass/styles.scss */
+  .class-item {
+    margin-left: 0;
   }
 
-  /* line 218, ../sass/styles.scss */
-  .student-form {
-    padding-left: 0;
+  /* line 240, ../sass/styles.scss */
+  .class-info {
+    border-top: none;
   }
+
+  /* line 244, ../sass/styles.scss */
+  .border-left {
+    border-left: none;
+  }
+
+  /* line 248, ../sass/styles.scss */
+  .icon-link {
+    border-top: 1px solid #e7e7e7;
+  }
+
+  /* line 252, ../sass/styles.scss */
+  .class-info > .icon-link {
+    border-right: 1px solid #e7e7e7;
+  }
+
+  /* line 256, ../sass/styles.scss */
+  .class-info > .icon-link ~ .icon-link {
+    border-right: none;
+  }
+}
+/* line 264, ../sass/styles.scss */
+form {
+  background: #fff;
+  border: 1px solid #D2D6DF;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px #fff;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* line 274, ../sass/styles.scss */
+.mce-content-body {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+/* line 279, ../sass/styles.scss */
+.mce-btn-group .mce-btn {
+  float: left;
 }

@@ -1,4 +1,6 @@
-<?php //redirect user if not logged in
+<?php //display user's saved classes
+
+//redirect user if not logged in
 if (!isset($_SESSION['user_id'])) {
   header('location: index.php?pagelet=index');
 }
@@ -9,9 +11,12 @@ if (!$_SESSION['prof_id'] && $_SESSION['admin'] == 0) {
 }
 ?>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -56,7 +61,7 @@ if (isset($_GET['np'])) { // Already been determined.
     }    
    
 } // End of np IF.
-
+//make the query
 $q = "SELECT c.class_id, c.loc_id, c.cat_id, c.class_name, c.class_desc, CONCAT('$', FORMAT(c.price, 2)) AS price, DATE_FORMAT(c.start_date, '%b %d, %Y') AS start_date, DATE_FORMAT(c.end_date, '%b %d, %Y') AS end_date, l.loc_name, k.cat_name 
     FROM classes AS c         
     INNER JOIN location as l  
@@ -76,7 +81,7 @@ while ($row = mysqli_fetch_assoc($r)) {
   $cat_id= $row['cat_id'];
 echo 
 '<div class="row class-item">
-
+  <div class="col-sm-12">
   <div class="row">    
     <div class="col-sm-12">
       <h4 class="text-uppercase">' . $row['start_date'] . ' - ' . $row['end_date'] .'</h4>
@@ -86,50 +91,22 @@ echo
   </div>
 
   <div class="row class-info">
-    <div class="col-xs-4 class-details">
+    <div class="col-sm-4 col-xs-6">
       <h4>Price: ' . $row['price'] . '</h4>
     </div>
-    <div class="col-xs-6 class-details">
+    <div class="col-sm-6 col-xs-6 border-left">
       <h4>' . $row['loc_name'] . '</h4>
     </div>
-    <div class="col-xs-1 icon-link class-details">
+    <div class="col-sm-1 col-xs-6 icon-link border-left text-center">
       <a href="index.php?pagelet=deleteclass&class=' . $row['class_id'] . '&saved_confirm=true" data-toggle="tooltip" title="Remove" class="text-danger"><span class="entypo-trash" ></span></a>
     </div>
-    <div class="col-xs-1 icon-link ">
-      <a href="index.php?pagelet=register&class=' . $row['class_id'] .'" data-toggle="tooltip" title="Register"><span class="entypo-plus-squared" class="text-primary"></span></a>
+    <div class="col-sm-1 col-xs-6 icon-link border-left text-center">
+      <a href="index.php?pagelet=register&class=' . $row['class_id'] .'" data-toggle="tooltip" title="Register" class="plus"><span class="entypo-plus-squared"></span></a>
     </div>
   </div>
-
+  </div>
 </div>';
 }   
-
-// echo '</div>
-// </div>';
-
-// Display records.
-// while ($row = mysqli_fetch_assoc($r)) {
-// echo '<div class="row">
-
-//             <div class="col-sm-12">
-
-//                 <dl class="dl-horizontal">
-
-//                     <dt><h4 class="class-title"><strong>' . $row['class_name'] . '</strong></h4><dt>
-//                     <dt class="text-uppercase">' . $row['start_date'] . ' - ' . $row['end_date'] .'</dt>
-//                     <dt>' . $row['loc_name'] . '</dt>
-//                     <dt>Price: ' . $row['price'] . '</dt>
-//                     <dd>' . $row['class_desc'] . '<br /><br />
-//                         <div class="text-right">
-//                       <a class="btn btn-primary btn-xs" href="index.php?pagelet=deleteclass&class=' . $row['class_id'] . '&saved_confirm=true" >Remove &raquo;</a>
-//                       <a class="btn btn-success btn-xs" href="index.php?pagelet=register&class=' . $row['class_id'] .'" >Register &raquo;</a>
-//                       </div>
-//                     </dd>
-//                 </dl>
-
-//             </div>
-
-//         </div>';
-// }   
 
 // Make the links to other pages, if necessary.
 if ($num_pages > 1) {
@@ -183,7 +160,7 @@ mysqli_close($dbc); //close the database connection
     </div><!-- col-sm-12 -->
   </div><!-- row -->
 </div><!-- container -->
-
+<!-- bootstrap tooltip -->
 <script>
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()

@@ -1,4 +1,6 @@
-<?php //redirect user if not logged in as admin
+<?php //This page confirms deletion of class from classlist or saved classes list.
+
+//redirect user if not logged in as admin
 if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
   header('location: index.php?pagelet=index');
 }
@@ -18,7 +20,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
 <?php
   require ('../upload/mysqli_connect.php'); // Connect to the db.
 
-  //set class as inactive if admin delete
+  //delete class if admin deletes from class list
   if (isset($_GET['confirm'])) {
 
   $q = "UPDATE classes SET active='0' WHERE class_id='". $_GET['class'] . "'";
@@ -57,7 +59,7 @@ if (isset($_GET['saved_confirm'])) {
 
     header('location: index.php?pagelet=saved');
     mysqli_close($dbc); //close the database connection
-  } else {//shower error if class status could not be changed
+  } else {//show error if class status could not be changed
 
     echo "<div class='row text-center'>
             <h2 class='text-danger'>There was an error handling your request.</h2>

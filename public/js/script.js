@@ -275,8 +275,95 @@ $(document).ready(function() {
     }            
    });
 
+  $("#contactForm").validate({  
+   //set required fields  
+    rules: {            
+      name: 'required',
+      email: {
+        required: true,        
+        email: true
+      },
+      message: 'required'
+    },
+    //set error messages
+    messages: {   
+      name: 'Please enter your name.',
+      email: {
+        required: 'Please enter your email address.',        
+        email: 'Please enter a valid email address.'
+      },  
+      message: 'Please enter a message.'             
+    },        
+    errorPlacement: function ( error, element ) {
+          // Add the `help-block` class to the error element
+          error.addClass( "help-block" );
+          error.insertAfter( element );          
+        },
+    //toggle error and success css styles
+    highlight: function(element) {
+        $(element).parent().addClass("has-error");
+    },
+    unhighlight: function(element) {
+        $(element).parent().removeClass("has-error");
+    }            
+   });  
 
-  });
+  // $("#contactForm").submit(function(event){
+  //     // cancels the form submission
+  //     event.preventDefault();
+  //     submitForm();
+  // });
+
+// $("#contactForm").validate().on("submit", function (event) {
+//     if (event.isDefaultPrevented()) {
+//         // handle the invalid form...
+//     } else {
+//         // everything looks good!
+//         event.preventDefault();
+//         submitForm();
+//     }
+// });
+
+//   function submitForm(){
+
+//       // Initiate Variables With Form Content
+//       var name = $("#name").val();
+//       var email = $("#email").val();
+//       var message = $("#message").val();
+   
+//       $.ajax({
+//           type: "POST",
+//           url: "../upload/form-process.php",
+//           data: "name=" + name + "&email=" + email + "&message=" + message,
+//           success : function(text){
+//               if (text == "success"){
+//                   formSuccess();
+//               }
+//           }
+//       });
+//   }
+//   function formSuccess(){
+//       $("#contactForm")[0].reset();
+//       //submitMSG(true, "Message Submitted!");
+//       //submitMSG(false, "Did you fill in the form properly?");
+//      $('confirm-modal').modal('show');
+           
+//   }
+
+
+
+//   function submitMSG(valid, msg){
+//         var msgClasses;
+//     if(valid){
+//         msgClasses = "h3 text-center tada animated text-success";
+//     } else {
+//         msgClasses = "h3 text-center text-danger";
+//     }
+//     $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+// }
+
+
+});
 
 
 

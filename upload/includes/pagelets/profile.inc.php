@@ -1,10 +1,11 @@
-<?php 
+<?php //user profile page
+
 //redirect user if not logged in
 if (!isset($_SESSION['user_id'])) {
   header('location: index.php?pagelet=index');
 }
 
-//prompt to complete profile if no profile (and not admin)
+//prompt to complete profile if no profile exists (and not admin)
 if (!isset($_SESSION['prof_id']) && $_SESSION['admin'] == 0 ) {
   
   echo "<script type='text/javascript'>
@@ -19,11 +20,11 @@ if (!isset($_SESSION['prof_id']) && $_SESSION['admin'] == 0 ) {
 
 require ('../upload/mysqli_connect.php'); // Connect to the db.
 
-$user_id = $_SESSION['user_id']; //store user_id 
+$user_id = $_SESSION['user_id']; //store user_id in session variable
 
 //check if profile exists
 if (isset($_SESSION['prof_id'])) {
-//select profile table values, user email from users table and profile info from profile table
+//select user email from users table and profile info from profile table
 $q="SELECT p.prof_id, p.first_name, p.last_name, u.email, p.street, p.city, p.state, p.zip FROM profiles AS p INNER JOIN users as u ON p.user_id=u.user_id AND u.user_id = '$user_id'";  
 $r = mysqli_query ($dbc, $q); 
 
@@ -106,7 +107,7 @@ if (empty($_POST['zip'])) {
   $z = mysqli_real_escape_string ($dbc, $trimmed['zip']);        
 }  
 
-if ($f && $l && $e && $s && $c && $st && $z) {//if form fields are correct
+if ($f && $l && $e && $s && $c && $st && $z) {//validation passes
 
 if (!($_SESSION['prof_id'])) {//if no profile exists
   //insert new values in profiles table
@@ -136,6 +137,7 @@ if (!($_SESSION['prof_id'])) {//if no profile exists
   
   mysqli_free_result($r);
   mysqli_close($dbc); 
+
   //show confirm modal   
   echo "<script type='text/javascript'>
   $(document).ready(function(){
@@ -165,7 +167,6 @@ if (!($_SESSION['prof_id'])) {//if no profile exists
   $r = mysqli_query ($dbc, $q); 
 
   if (mysqli_affected_rows($dbc) == 1) {
-
     //update session variables
     $q = "SELECT p.prof_id, p.first_name, p.last_name, u.email, p.street, p.city, p.state, p.zip FROM profiles AS p INNER JOIN users as u ON p.user_id=u.user_id AND u.user_id = '$user_id'";
     $r = mysqli_query ($dbc, $q);  
@@ -206,7 +207,7 @@ if (!($_SESSION['prof_id'])) {//if no profile exists
       </noscript>";
   } //end of update conditional
 } //end of profile match conditional
-} else {//form did not validate
+} else {//validation fails
   echo "<script type='text/javascript'>
       $(document).ready(function(){
       $('#goback').modal('show');
@@ -219,8 +220,10 @@ if (!($_SESSION['prof_id'])) {//if no profile exists
 } //end of submit conditional
 ?>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <div class="container">
@@ -233,7 +236,7 @@ if (!($_SESSION['prof_id'])) {//if no profile exists
 
   <div class="row">
 
-    <form class="col-md-4 col-md-offset-4" action="" method="post" id="profile">
+    <form class="col-md-8 col-md-offset-2" action="" method="post" id="profile">
       <div class="form-group">
         <label for="firstname">First Name</label>
         <input type="text" class="form-control" name="firstname" value="<?php if (isset ($_SESSION['first_name'])) echo $_SESSION['first_name']; ?>">                      

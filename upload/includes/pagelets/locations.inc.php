@@ -1,14 +1,16 @@
 <div class="jumbotron">
   <div class="container text-center">
     <div class="row">
-      <h1 class="boost">Boost</h1>
+      <h1>Boost</h1>
       <h2>After School Enrichment</h2>
     </div>  
   </div>
 </div>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <div class="container">

@@ -1,4 +1,6 @@
-<?php //redirect user if not logged in as admin
+<?php //This page allows the admin to edit class details
+
+//redirect user if not logged in as admin
 if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
   header('location: index.php?pagelet=index');
 }
@@ -40,17 +42,11 @@ if (isset($_SESSION['delete_class'])) {
 }
 
 //from view classes page
-$class_id = $_GET['class'];//get class id
-
-//database connection with flag to show number of affected rows and number of 
-//matched rows to validate update query
-//$dbc = mysqli_init();
-//$dbc->real_connect('localhost', 'boost_app', 'secret', 'boost', '3306', null, MYSQLI_CLIENT_FOUND_ROWS);
-//doesn't work on student server
+$class_id = $_GET['class'];//get class id from GET variable
 
 require ('../upload/mysqli_connect.php'); // Connect to the db.
 
-//check if class exits
+//check if class id is set
 if (isset($class_id)) {
 //select class values  
 $q = "SELECT c.class_id, c.loc_id, c.cat_id, c.class_name, c.class_desc, CONCAT(FORMAT(c.price, 0)) AS price, DATE_FORMAT(c.start_date, '%Y-%m-%d') AS start_date, DATE_FORMAT(c.end_date, '%Y-%m-%d') AS end_date, l.loc_name, k.cat_name 
@@ -123,7 +119,7 @@ if (empty($_POST['location'])) {
     $l = mysqli_real_escape_string ($dbc, $trimmed['location']);
 } 
 
-// Check for a location.
+// Check for a category.
 if (empty($_POST['category'])) {
     $l = FALSE;
     $message .= '<p>You did not enter a location.</p>';
@@ -139,7 +135,7 @@ if (empty($_POST['desc'])) {
     $d = mysqli_real_escape_string ($dbc, $trimmed['desc']);
 } 
 
-if ($c && $s && $e && $p && $l && $cat && $d )   {   
+if ($c && $s && $e && $p && $l && $cat && $d )   {//validation passes   
   //update record   
   $q = "UPDATE classes SET loc_id='$l', cat_id='$cat', class_name='$c', class_desc='$d', start_date='$s', end_date='$e', price='$p' WHERE class_id = '$class_id'";
   $r = mysqli_query ($dbc, $q);
@@ -168,7 +164,7 @@ if ($c && $s && $e && $p && $l && $cat && $d )   {
   mysqli_free_result($r);
   mysqli_close($dbc);
 
-  //show confirmation
+  //show confirmation message
   echo "<script type='text/javascript'>
     $(document).ready(function(){
     $('#confirm-modal').modal('show');
@@ -196,7 +192,7 @@ if ($c && $s && $e && $p && $l && $cat && $d )   {
       <div class='text-danger'>" .$message. "</div>
       </noscript>"; 
     }//end of update conditional
-  } else { //form did not validate      
+  } else { //validation fails     
     //show error modal           
     echo "<script type='text/javascript'>
       $(document).ready(function(){
@@ -209,9 +205,11 @@ if ($c && $s && $e && $p && $l && $cat && $d )   {
       </noscript>";          
   }//end of validation conditional           
 } // End of post conditional. Always display the form.
-      ?>
-<div class="col-sm-12">
+?>
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <div class="container">

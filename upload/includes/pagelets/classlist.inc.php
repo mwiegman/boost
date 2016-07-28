@@ -1,4 +1,6 @@
-<?php //redirect user if not logged in as admin
+<?php//Admin edit/delete classlist page
+
+//redirect user if not logged in as admin
 if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
   header('location: index.php?pagelet=index');
 }
@@ -13,13 +15,15 @@ if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
   </div>
 </div>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-2 col-md-3">
+    <div class="col-sm-4 col-md-3">
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
 
@@ -110,9 +114,9 @@ if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
             </div>
 
         </div><!-- panel-group -->
-    </div><!-- col-sm-3 -->
+    </div>
 
-    <div class="col-sm-10 col-md-7">
+    <div class="col-sm-8 col-md-9">
 
 <?php 
 // display classes

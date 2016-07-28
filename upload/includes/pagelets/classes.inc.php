@@ -1,14 +1,16 @@
 <div class="jumbotron">
   <div class="container text-center">
     <div class="row">
-      <h1 class="boost">Boost</h1>
+      <h1>Boost</h1>
       <h2>After School Enrichment</h2>
     </div>  
   </div>
 </div>
 
-<div class="col-sm-12">
+<div class="row">
+  <div class="col-xs-11 title">
     <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+  </div>
 </div>
 
 <div class="container">
@@ -92,46 +94,7 @@
 
                 </div><!-- collapseTwo -->
 
-            </div><!-- panel --> 
-             <div class="panel panel-default">
-
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                        Sort <span class="caret"></span></a>
-                    </h4>
-                </div><!-- panel-heading -->
-
-                <div id="collapseThree" class="panel-collapse collapse">
-
-                    <div class="panel-body">
-
-                        <table class="table">
-
-                            <tr>
-                                <td>
-                                    <a href="index.php?pagelet=classes&sort=sd">Starting Date</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="index.php?pagelet=classes&sort=pl">Price (Low to High)</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="index.php?pagelet=classes&sort=ph">Price(High to Low)</a>
-                                </td>
-                            </tr>
-
-                        </table>
-
-                    </div><!-- panel-body -->
-
-                </div><!-- collapseTwo -->
-
-            </div><!-- panel --> 
-
+            </div><!-- panel -->   
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -146,7 +109,8 @@
 
     <div class="col-sm-8 col-md-9">
 
-<?php 
+<?php //This page displays available classes
+
 //show confirmation for adding class to saved list
 if (isset($_GET['saved'])) {
    echo "<script type='text/javascript'>
@@ -159,7 +123,6 @@ if (isset($_GET['saved'])) {
 }
 
 // display classes
-
 require ('../upload/mysqli_connect.php'); // Connect to the db.
 
 // Determine which records to show
@@ -204,25 +167,6 @@ switch ($_GET['filter'])  {//display class records according to selected filter
     $where = "";
 }
 
-if (isset($GET['sort'])) {
-  switch($GET['sort']) {
-    case 'sd';
-      $sort = "ORDER BY start_date ASC";
-      break;
-    case 'ph';
-      $sort = "ORDER BY price DESC";
-      break;
-    case 'pl';
-      $sort = "ORDER BY price ASC";
-      break;
-    default;
-      $sort = "ORDER BY c.class_name ASC";
-      break;    
-  }
-} else {
-  $sort = "ORDER BY c.class_name ASC";
-}
-
 // Number of records to show per page:
 $display = 5;
 
@@ -263,7 +207,7 @@ $q = "SELECT c.class_id, c.loc_id, c.cat_id, c.class_name, c.class_desc, CONCAT(
         ON c.cat_id=k.cat_id
         $and
         WHERE c.active='1'
-        $sort
+        ORDER BY c.class_name ASC
         LIMIT $start, $display";        
 $r = mysqli_query ($dbc, $q); // Run the query.
 
@@ -295,10 +239,10 @@ echo '
   </div>
 
   <div class="row class-info">
-    <div class="col-xs-4 class-details">
+    <div class="col-sm-4 col-xs-6">
       <h4>Price: ' . $row['price'] . '</h4>
     </div>
-    <div class="col-xs-6 class-details">
+    <div class="col-sm-4 col-xs-6">
       <h4>' . $row['loc_name'] . '</h4>
     </div>';
          //show save and register buttons only for logged in users
@@ -309,23 +253,23 @@ echo '
         $row = mysqli_fetch_row ($result);
         $num_records = $row[0];
 
-        if ($num_records == 0) {
+        if ($num_records == 0) {//show "empty" heart to indicate save status
         echo '
-          <div class="col-xs-1 icon-link class-details">
+          <div class="col-sm-1 col-xs-6 icon-link border-left text-center">
             <a href="index.php?pagelet=classes&class=' . $class_id .'" data-toggle="tooltip"  title="Save" class="heart"><span class="entypo-heart-empty"></span>          
             </a> 
           </div>
-          <div class="col-xs-1 icon-link">
+          <div class="col-sm-1 col-xs-6 icon-link border-left text-center">
             <a href="index.php?pagelet=register&class=' . $class_id .'" data-toggle="tooltip" title="Register" class="plus"><span class="entypo-plus-squared"></span>
             </a>
           </div>';
         } else {//always show register button
         echo '
-          <div class="col-xs-1 icon-link class-details">
+          <div class="col-sm-1 col-xs-6 icon-link border-left text-center">
             <a href="" data-toggle="tooltip"  title="Saved" class="heart"><span class="entypo-heart"></span>          
             </a> 
           </div>
-          <div class="col-xs-1 icon-link">
+          <div class="col-sm-1 col-xs-6 icon-link border-left text-center">
             <a href="index.php?pagelet=register&class=' . $class_id .'" data-toggle="tooltip" title="Register" class="plus"><span class="entypo-plus-squared" ></span>
             </a>
           </div>';
@@ -408,7 +352,7 @@ if ($num_pages > 1) {
 if (isset($_GET['class'])) {
     $class_id=$_GET['class'];
     $user_id=$_SESSION['user_id'];
-//insert class into saved classes
+//insert class into saved table
 $q="INSERT INTO saved (class_id, user_id) VALUES ('$class_id', '$user_id')";
 $r = mysqli_query ($dbc, $q);
 
