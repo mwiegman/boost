@@ -11,15 +11,17 @@ if (!isset($_SESSION['prof_id']) && $_SESSION['admin'] == 0) {
 }
 ?>
 
-<div class="row">
-  <div class="col-xs-11 title">
-    <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+    </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">  
-    <div class="col-xs-6">      
+    <div class="col-sm-6">      
 <?php
 //set user and class variables
 $user_id = $_SESSION['user_id'];
@@ -45,8 +47,8 @@ echo '<h4><u>Class Information</u></h4>
         </ul> ';
 }
 ?>
-    </div>
-    <div class='col-xs-6'>
+</div>
+    <div class='col-sm-6'>
 <?php
 //display profile information
 $q="SELECT p.prof_id, CONCAT_WS (' ', p.first_name, p.last_name) AS name, u.email, p.street, p.city, p.state, p.zip FROM profiles AS p INNER JOIN users as u ON p.user_id=u.user_id AND u.user_id = '$user_id'";  
@@ -56,12 +58,7 @@ while ($row = mysqli_fetch_assoc($r)) {
 echo "<h4><u>Your Profile Information</u></h4>
         <address>
           <strong>Name</strong><br>". $row['name'] . "<br>
-          <strong>Email</strong><br>
-          ". $row['email'] . "<br>      
-          <strong>Address</strong><br>
-          ". $row['street'] . "<br>
-          ". $row['city'] . ", ". $row['state'] ." " .  $row['zip'] . " 
-        </address>
+          <strong>Email</strong><br>". $row['email'] . "<br><strong>Address</strong><br>". $row['street'] . "<br>". $row['city'] . ", ". $row['state'] ." " .  $row['zip'] . "</address>
       ";
 }
 ?>
@@ -156,7 +153,7 @@ echo "<h4><u>Your Profile Information</u></h4>
     } 
   ?>
   
-    <div class="col-sm-12 col-md-7 col-md-offset-2">
+    <div class="col-xs-12 col-md-7 col-md-offset-2">
       <h4><u>Student Information</u></h4>
         <form action="" method="post" id="participant">   
 

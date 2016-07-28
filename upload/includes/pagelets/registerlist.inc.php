@@ -6,9 +6,11 @@ if (!isset($_SESSION['user_id']) || $_SESSION['admin'] == 0) {
 }
 ?>
 
-<div class="row">
-  <div class="col-xs-11 title">
-    <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+    </div>
   </div>
 </div>
 

@@ -15,7 +15,7 @@
             </ul>
         </div><!-- row -->
         <div class="row">
-            <div class="col-sm-12 text-center">Copyright</div>
+            <div class="col-sm-12 text-center">&copy; Copyright Boost App. All Rights Reserved.</div>
         </div>
     </div><!--container -->   
 </footer><!--container fluid -->

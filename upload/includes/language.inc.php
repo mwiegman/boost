@@ -1,65 +1,65 @@
 <?php
 // pagelet text
-define('INDEX_TITLE', 'Welcome to Boost');
-define('INDEX_DESC', 'Homepage of Boost');
+DEFINE ('INDEX_TITLE', 'Welcome to Boost');
+DEFINE ('INDEX_DESC', 'Homepage of Boost');
 
-define('LOCATIONS_TITLE', 'Our Locations');
-define('LOCATIONS_DESC', 'Our Locations');
+DEFINE ('LOCATIONS_TITLE', 'Our Locations');
+DEFINE ('LOCATIONS_DESC', 'Our Locations');
 
-define('CONTACT_TITLE', 'Contact Us');
-define('CONTACT_DESC', 'Contact Us');
+DEFINE ('CONTACT_TITLE', 'Contact Us');
+DEFINE ('CONTACT_DESC', 'Contact Us');
 
-define('FAQ_TITLE', 'Frequently Asked Questions');
-define('FAQ_DESC', 'Frequently Asked Questions');
+DEFINE ('FAQ_TITLE', 'Frequently Asked Questions');
+DEFINE ('FAQ_DESC', 'Frequently Asked Questions');
 
-define('CLASSES_TITLE', 'Our Classes');
-define('CLASSES_DESC', 'Our Classes');
+DEFINE ('CLASSES_TITLE', 'Our Classes');
+DEFINE ('CLASSES_DESC', 'Our Classes');
 
-define('SIGNUP_TITLE', 'Sign Up');
-define('SIGNUP_DESC', 'Sign Up');
+DEFINE ('SIGNUP_TITLE', 'Sign Up');
+DEFINE ('SIGNUP_DESC', 'Sign Up');
 
-define('LOGIN_TITLE', 'Log In');
-define('LOGIN_DESC', 'Log In');
+DEFINE ('LOGIN_TITLE', 'Log In');
+DEFINE ('LOGIN_DESC', 'Log In');
 
-define('ACTIVATE_TITLE', 'Activate Your Account');
-define('ACTIVATE_DESC', 'Activate Your Account');
+DEFINE ('ACTIVATE_TITLE', 'Activate Your Account');
+DEFINE ('ACTIVATE_DESC', 'Activate Your Account');
 
-define('PROFILE_TITLE', 'Profile');
-define('PROFILE_DESC', 'Profile Information');
+DEFINE ('PROFILE_TITLE', 'Profile');
+DEFINE ('PROFILE_DESC', 'Profile Information');
 
-define('REGISTER_TITLE', 'Register');
-define('REGISTER_DESC', 'Registration Information');
+DEFINE ('REGISTER_TITLE', 'Register');
+DEFINE ('REGISTER_DESC', 'Registration Information');
 
-define('SAVED_TITLE', 'Saved Classes');
-define('SAVED_DESC', 'Saved Classes');
+DEFINE ('SAVED_TITLE', 'Saved Classes');
+DEFINE ('SAVED_DESC', 'Saved Classes');
 
-define('MYCLASSES_TITLE', 'My Classes');
-define('MYCLASSES_DESC', 'My Classes');
+DEFINE ('MYCLASSES_TITLE', 'My Classes');
+DEFINE ('MYCLASSES_DESC', 'My Classes');
 
-define('ADDCLASS_TITLE', 'Add Class');
-define('ADDCLASS_DESC', 'Add Class');
+DEFINE ('ADDCLASS_TITLE', 'Add Class');
+DEFINE ('ADDCLASS_DESC', 'Add Class');
 
-define('EDITCLASS_TITLE', 'Edit Classes');
-define('EDITCLASS_DESC', 'Edit Classes');
+DEFINE ('EDITCLASS_TITLE', 'Edit Classes');
+DEFINE ('EDITCLASS_DESC', 'Edit Classes');
 
-define('MODIFYCLASS_TITLE', 'Modify Class');
-define('MODIFYCLASS_DESC', 'Modify Class');
+DEFINE ('MODIFYCLASS_TITLE', 'Modify Class');
+DEFINE ('MODIFYCLASS_DESC', 'Modify Class');
 
-define('CLASSLIST_TITLE', 'Edit Classes');
-define('CLASSLIST_DESC', 'Edit Classes');
+DEFINE ('CLASSLIST_TITLE', 'Edit Classes');
+DEFINE ('CLASSLIST_DESC', 'Edit Classes');
 
-define('LOGOUT_TITLE', 'Logged Out');
-define('LOGOUT_DESC', 'Logged Out');
+DEFINE ('LOGOUT_TITLE', 'Logged Out');
+DEFINE ('LOGOUT_DESC', 'Logged Out');
 
-define('DELETECLASS_TITLE', 'Confirm Class Deletion');
-define('DELETECLASS_DESC', 'Confirm Class Deletion');
+DEFINE ('DELETECLASS_TITLE', 'Confirm Class Deletion');
+DEFINE ('DELETECLASS_DESC', 'Confirm Class Deletion');
 
-define('REGISTERLIST_TITLE', 'View Classes');
-define('REGISTERLIST_DESC', 'View Classes');
+DEFINE ('REGISTERLIST_TITLE', 'View Classes');
+DEFINE ('REGISTERLIST_DESC', 'View Classes');
 
-define('RESET_TITLE', 'Reset Your Password');
-define('RESET_DESC', 'Reset Your Password');
+DEFINE ('RESET_TITLE', 'Reset Your Password');
+DEFINE ('RESET_DESC', 'Reset Your Password');
 
-define('CHGPSWD_TITLE', 'Change Password');
-define('CHGPSWD_DESC', 'Change Password');
+DEFINE ('CHGPSWD_TITLE', 'Change Password');
+DEFINE ('CHGPSWD_DESC', 'Change Password');
 ?>

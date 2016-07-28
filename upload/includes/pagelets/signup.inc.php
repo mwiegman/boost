@@ -24,12 +24,6 @@ if (isset($_SESSION['user_id'])) {
   </div>
 </div>
 
-<div class="row">
-  <div class="col-xs-11 title">
-    <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
-  </div>
-</div>
-
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 

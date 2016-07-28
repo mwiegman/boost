@@ -7,9 +7,11 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-xs-11 title">
-    <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <?php echo "<h1>" . constant(strtoupper($pagelet) . '_TITLE') . "</h1>";?>
+    </div>
   </div>
 </div>
 
@@ -25,7 +27,7 @@ if (isset($_POST["submit"])) {
     $message = $_POST['message'];
     $human = intval($_POST['human']);
     $from = $email; 
-    $to = 'meredith.wiegman@gmail.com'; 
+    $to = 'email@example.com'; //change address where form will be sent
     $subject = 'Message from Contact Form ';
     
     $body = "From: $name\n E-Mail: $email\n Message:\n $message";
@@ -65,8 +67,8 @@ if (!$err) {
      </div>';
   } else {
     echo "<div class='alert alert-danger'>There was an error sending your message. $err</div>
-    <div class='"'text-center'"'>
-    <a href='"'index.php?pagelet=contact'"' class='"'btn btn-primary btn-lg'"'>Go Back</a></div>";
+    <div class='text-center'>
+    <a href='index.php?pagelet=contact' class='btn btn-primary btn-lg'>Go Back</a></div>";
   }
 }
 echo '</div>

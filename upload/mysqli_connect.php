@@ -15,12 +15,3 @@ $dbc = @mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could n
 
 // Set the encoding...
 mysqli_set_charset($dbc, 'utf8');
-
-// function to escape form data.
-function escape_data ($data) {
-  global $dbc; // Need the connection.
-  if (ini_get('magic_quotes_gpc')) {
-      $data = stripslashes($data);
-  }
-  return mysqli_real_escape_string($dbc, $data);
-} 

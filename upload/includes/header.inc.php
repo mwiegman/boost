@@ -19,7 +19,7 @@ if ($pagelet == 'addclass' || 'modifyclass') {//add tinymce script to pages with
 }
 ?>
 </head>
-<body class=""> 
+<body> 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">    
     <div class="navbar-header">
