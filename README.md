@@ -23,7 +23,7 @@
       <li><a href="#welcome" class="cc-active">Welcome</a></li>
       <li><a href="#features" class="cc-active">Features</a></li>
       <li><a href="#install" class="cc-active">Installation</a></li>      
-      <li class="separator"></li>
+      
       <li><strong><a href="#includes">Included Files</a></strong></li>
       <li><a href="#public" class="cc-active">Public Directory</a></li>
       <li><a href="#sass" class="cc-active">Sass Directory</a></li>
@@ -33,10 +33,10 @@
       <li><a href="#css" class="cc-active">CSS Directory</a></li>
       <li><a href="#js" class="cc-active">JS directory</a></li>
       <li><a href="#images" class="cc-active">Images directory</a></li>
-      <li class="separator"></li>
+      
       <li><strong><a href="#sql">MySQL</a></strong></li>
       <li><a href="#admin" class="cc-active">Create Admin</a></li>
-      <li class="separator"></li>
+      
       <li><strong><a href="#issues">Issues/Feature Requests</a></strong></li>
       <li><a href="#requests" class="cc-active">Feature Requests</a></li>
       <li><a href="#bugs" class="cc-active">Known Issues</a></li>
