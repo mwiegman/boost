@@ -1,42 +1,177 @@
-Included Files
-The following is a list of the major files included with the application:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Documentation for class scheduling app for Boost After School Enrichment.">
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Boost App Documentation</title>
+<link rel="icon" href="http://student065.webdev.seminolestate.edu/favicon.ico?v=2" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Raleway:700,300" rel="stylesheet"
+        type="text/css">
+<link rel="stylesheet" href="css/docstyle.css">
+</head>
+<body>
+<div class="wrapper">
+<header>
+  <div class="container">
+    <h2 class="lone-header">Boost | A CMS tailored for the needs of extracurricular activity providers</h2>
+  </div>
+</header>
+<section>
+  <div class="container">
+    <ul class="docs-nav">
+      <li><strong><a href="#start">Getting Started</a></strong></li>
+      <li><a href="#welcome" class="cc-active">Welcome</a></li>
+      <li><a href="#features" class="cc-active">Features</a></li>
+      <li><a href="#install" class="cc-active">Installation</a></li>      
+      <li class="separator"></li>
+      <li><strong><a href="#includes">Included Files</a></strong></li>
+      <li><a href="#public" class="cc-active">Public Directory</a></li>
+      <li><a href="#sass" class="cc-active">Sass Directory</a></li>
+      <li><a href="#upload" class="cc-active">Upload Directory</a></li>
+      <li><a href="#includes" class="cc-active">Includes Directory</a></li>
+      <li><a href="#pagelets" class="cc-active">Pagelets Directory</a></li>
+      <li><a href="#css" class="cc-active">CSS Directory</a></li>
+      <li><a href="#js" class="cc-active">JS directory</a></li>
+      <li><a href="#images" class="cc-active">Images directory</a></li>
+      <li class="separator"></li>
+      <li><strong><a href="#sql">MySQL</a></strong></li>
+      <li><a href="#admin" class="cc-active">Create Admin</a></li>
+      <li class="separator"></li>
+      <li><strong><a href="#issues">Issues/Feature Requests</a></strong></li>
+      <li><a href="#requests" class="cc-active">Feature Requests</a></li>
+      <li><a href="#bugs" class="cc-active">Known Issues</a></li>
+    </ul>
+    <div class="docs-content">
+      <h2 id="start"> Getting Started</h2>
+      <h3 id="welcome"> Welcome</h3>
+      <p>Are you a small business provider of extracurricular activities or other similar services? Are you looking for a CMS that can help you manage and grow your business? Boost CMS may be the answer you're looking for!</p>
+      <h3 id="features"> Features</h3>
+      <ul>
+        <li>User-friendly backend for adding, editing, and deleting classes.</li>
+        <li>Easy-to-access class rosters and related information.</li>
+        <li>Beautifully designed front end that will draw in new customers and retain the ones you have.</li>
+        <li>Authenticate users and register new students.</li>
+        <li>Built with <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://sass-lang.com/">Sass</a> for easy customization.</li>
+        <li>Javascript form validation with <a href="https://jqueryvalidation.org/">jQuery validation plugin.</a></li>
+        <li>Easy to install; just download the github repository to get started!</li>        
+      </ul>
+      <h3 id="install">Installation</h3>
+      <h2>System Requirements</h2>
+      <p> Before you install Boost, make sure that you have met the following system requirements:</p>
+      <ul>
+        <li>PHP 5.5+</li>
+        <li>Apache web server 2.4.9+</li>
+        <li>MySQL 5.5+</li>
+        <li><a href="http://compass-style.org/">Compass</a> css authoring framework</li>        
+      </ul>
+      <p> Visit <a href="https://github.com/mwiegman/boost-phase4">https://github.com/mwiegman/boost-phase4 </a>to download the github repository and install to the directory of your choice. This repository contains the bootstrap and sass configuration files, all necessary templates, pages, and scripts, and the sql "create table" code.</p> 
+      <hr>
+      <h2 id="includes">Included Files</h2>
+      <p> The following is a list of the major files included with the application:</p>
+      <h3 id="public">Public Directory</h3>
+      <ul>
+        <li>index.php</li>
+      </ul>     
+      <p>This file is the foundation of Boost's templating system. Major modifications to the site's layout and included files should be made here.</p>      
+      <ul>
+        <li>config.rb</li>
+      </ul>
+      <p>This file contains the configuration options for Compass.</p>
+      
+      <h3 id="sass">Sass Directory</h3>
+      <p>This directory contains core Bootstrap css and custom Sass stylesheet. Make all css changes to these files. Any changes made to the stylesheets in the CSS directory will be overriden when compiled.</p>
+      <ul>
+        <li>bootstrap/_bootstrap-variables.scss</li>
+      </ul>
+      <p>Override Bootstrap variables here (defaults from bootstrap-sass v3.3.6).</p>      
+      <ul>
+        <li>styles.sccs</li>
+      </ul>
+      <p>Customize your app's design with this file. Styles here will overide Bootstrap defaults.</p>
+      <h3 id="upload">Upload Directory</h3>
+      <p>The app's main content is located in this directory.</p>
+      <ul>
+        <li>mysqli_connect.php</li>
+      </ul>
+      <p>Change the constants in the file to access your database.</p>
+      <?prettify lang=php?>   
+      <pre>
+      //change definitions to your database's access information
+      DEFINE ('DB_USER', 'username');
+      DEFINE ('DB_PASSWORD', 'password');
+      DEFINE ('DB_HOST', 'localhost');
+      DEFINE ('DB_NAME', 'database name');
+      </pre>
+      <h3 id="includes">Includes Directory</h3>
+      <ul>
+        <li>header.inc.php</li>
+      </ul>
+      <p>Make changes to your site's header and navigation options using this file.</p>
+      <ul>
+        <li>footer.inc.php</li>
+      </ul>
+      <p>Customize your site's footer content here.</p>
+      <ul>
+        <li>language.inc.php</li>
+      </ul>
+      <p>Define page titles and descriptions with this file. To add constants for a new page, name the constant with the pagelet's title</p>
+      <?prettify lang=php?>    
+      <pre class="prettyprint">
+        //change "PAGE" to pagelet name in all caps
+        DEFINE ('PAGE_TITLE', 'page title'); 
+        DEFINE ('PAGE_DESC', 'page description');</pre> 
+      <h3 id="pagelets">Pagelets Directory</h3>
+      <p>The individual page contents are located in the pagelets directory. To add a new page to your app, save it here with a file name format of "paglet_title.inc.php". See individual pagelets for comments with descriptions and code logic for each script.</p><p>Make sure to change the <code>$to</code> variable in the contact pagelet to customize the email address where the contact form will be sent.</p>      
+     <?prettify lang=php?>    
+      <pre class="prettyprint">
+       //change address where form will be sent
+       $to = 'email@example.com'; </pre> 
+      <h3 id="css">CSS Directory</h3>
+      <p>This directory contains the animate.css CSS library and the styles.css file that is compiled by Compass. Changes to the site's style should be made to the sass file, as changes made here will be overridden.</p> 
+      <h3 id="js">JS Directory</h3>
+      <p>Bootstrap javascript files are located here and Boost's javascript file are located here.</p>
+      <ul>
+        <li>script.js</li>       
+      </ul>
+      <p>Add custom javascript for the site to this file. Customize form validation for use with the jQuery validation plugin here.</p>
+      <h3 id="images">Images Directory</h3>
+      <p>This directory contains the app's background images. The site was deliberately designed with minimal images to minimize loading times.</p>
+      <hr>
+      <h2 id="sql">MySQL</h2>
+      <p>The SQL "create table" code can be found in boost.sql. Use this code to create a database with the proper structure to run the app.</p>
+      <h3 id="admin">Create Admin</h3>
+      <p>To add administrative users for the app, insert a row in the 'users' table with an 'admin' column value of '1'.</p>
+      <?prettify lang=sql?>
+      <pre class="prettyprint">INSERT INTO `boost`.`users` (`user_id`, `prof_id`, `username`,`email`, `password`, `admin`, `active`, `reg_date`, `reset`, `reset_expire`)VALUES (NULL, NULL, 'admin_username', 'email@example.com', SHA1('password'), '1', NULL, NOW(), '', '');
+      </pre>
+      <hr>
+      <h2 id="issues">Issues/Feature Requests</h2>
+      <h3 id="requests">Feature Requests</h3>
+      <p>Application features to be developed include:</p>
+      <ul>
+        <li>Online payment processing (paypal integration)</li>
+        <li>Third-party login integration (Google, Facebook, or Amazon account login)</li>
+        <li>Keyword class search.</li>
+        <li>Allow users to register multiple students at one time.</li>
+        <li>Allow admin access to registered users list.</li>
+      </ul>
+      <h3 id="bugs">Known Issues</h3>
+      <ul>
+        <li>Sort feature for class list was not working correctly and was removed. This feature needs to be corrected and reimplimented.</li>
+        <li>Other bugs will be listed here as they are discovered.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
---Public Directory
-*index.php
-This file is the foundation of Boost's templating system. Major modifications to the site's layout and included files should be made here.     
-*config.rb
-This file contains the configuration options for Compass.
-
---Sass Directory
-This directory contains core Bootstrap css and custom Sass stylesheet. Make all css changes to these files. Any changes made to the stylesheets in the CSS directory will be overriden when compiled.
-*bootstrap/_bootstrap-variables.scss
-Override Bootstrap variables here (defaults from bootstrap-sass v3.3.6).     
-*styles.sccs
-Customize your app's design with this file. Styles here will overide Bootstrap defaults.
-
---Upload Directory
-The app's main content is located in this directory.
-*mysqli_connect.php
-Change the constants in the file to access your database.
-
---Includes Directory
-*header.inc.php
-Make changes to your site's header and navigation options using this file.
-*footer.inc.php
-Customize your site's footer content here.
-*language.inc.php
-Define page titles and descriptions with this file. To add constants for a new page, name the constant with the pagelet's title
-
---Pagelets Directory
-The individual page contents are located in the pagelets directory. To add a new page to your app, save it here with a file name format of "paglet_title.inc.php". See individual pagelets for comments with descriptions and code logic for each script.ake sure to change the $to variable in the contact pagelet to customize the email address where the contact form will be sent.     
-
---CSS Directory
-This directory contains the animate.css CSS library and the styles.css file that is compiled by Compass. Changes to the site's style should be made to the sass file, as changes made here will be overridden.
-
---JS Directory
-Bootstrap javascript files are located here and Boost's javascript file are located here.
-*script.js  
-Add custom javascript for the site to this file. Customize form validation for use with the jQuery validation plugin here.
-
---Images Directory
-This directory contains the app's background images. The site was deliberately designed with minimal images to minimize loading times.
+<footer>
+  <div>
+    <p> &copy; Copyright Boost App. All Rights Reserved.</p>
+  </div>
+</footer>
+</div>
+<script src="js/jquery.min.js"></script> 
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+</body>
+</html>
